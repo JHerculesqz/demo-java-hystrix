@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HystrixClientDemo</title>
+    <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/component/AjaxUtils.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		$("#btnSimpleDemo").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/simpledemo", {
+    				name: "111"
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnExecuteModeSync").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/executeModeSync", {
+    				name: "btnExecuteModeSync"
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnExecuteModeASync").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/executeModeASync", {
+    				name: "btnExecuteModeASync"
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnExecuteModeReact").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/executeModeReact", {
+    				name: "btnExecuteModeReact"
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnThreadPoolIsolate1").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
+    				name: "btnThreadPoolIsolate1",
+    				recovery: false
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnThreadPoolIsolate2").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
+    				name: "btnThreadPoolIsolate2",
+    				recovery: false
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnThreadPoolIsolate3").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
+    				name: "btnThreadPoolIsolate3",
+    				recovery: true
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnSemaphoreIsolate1").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/semaphoreIsolate", {
+    				name: "btnSemaphoreIsolaate1",
+    				recovery: false
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnSemaphoreIsolate2").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/semaphoreIsolate", {
+    				name: "btnSemaphoreIsolate2",
+    				recovery: false
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnSemaphoreIsolate3").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/semaphoreIsolate", {
+    				name: "btnSemaphoreIsolate3",
+    				recovery: true
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    	});
+    </script>
+</head>
+<body>
+	<button id="btnSimpleDemo">SimpleDemo</button><br/>
+	<button id="btnExecuteModeSync">ExecuteModeSync</button>
+	<button id="btnExecuteModeASync">ExecuteModeASync</button>
+	<button id="btnExecuteModeReact">ExecuteModeReact</button><br/>
+	<button id="btnThreadPoolIsolate1">ThreadPoolIsolate1</button>
+	<button id="btnThreadPoolIsolate2">ThreadPoolIsolate2</button>
+	<button id="btnThreadPoolIsolate3">ThreadPoolIsolate3</button><br/>
+	<button id="btnSemaphoreIsolate1">SemaphoreIsolate1</button>
+	<button id="btnSemaphoreIsolate2">SemaphoreIsolate2</button>
+	<button id="btnSemaphoreIsolate3">SemaphoreIsolate3</button><br/>
+</body>
+</html>
