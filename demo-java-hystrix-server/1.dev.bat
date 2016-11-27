@@ -1,5 +1,5 @@
 cd %~dp0
-call gradlew clean
+call gradlew cleanEclipse
 cd %~dp0
 
 cd %~dp0

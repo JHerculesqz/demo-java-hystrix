@@ -18,4 +18,7 @@
 	[hystrxi验证流程]
 	https://raw.githubusercontent.com/wiki/Netflix/Hystrix/images/hystrix-command-flow-chart.png
 	https://raw.githubusercontent.com/wiki/Netflix/Hystrix/images/circuit-breaker-1280.png
-	
+	[hystrix by springboot]
+	http://spring.io/guides/gs/circuit-breaker/
+	https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica
+	https://github.com/Netflix/Hystrix/wiki/Configuration

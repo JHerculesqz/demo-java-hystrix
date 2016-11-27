@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HystrixClientDemo</title>
+    <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/component/AjaxUtils.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		$("#btnThreadPoolIsolate1").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
+    				name: "btnThreadPoolIsolate1",
+    				crazyMode: 0
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnThreadPoolIsolate2").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
+    				name: "btnThreadPoolIsolate2",
+    				crazyMode: 2 
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnThreadPoolIsolate3").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
+    				name: "btnThreadPoolIsolate3",
+    				crazyMode: 1
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnThreadPoolIsolate4").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
+    				name: "btnThreadPoolIsolate4",
+    				crazyMode: 3
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    	});
+    </script>
+</head>
+<body>
+	<button id="btnThreadPoolIsolate1">ThreadPoolIsolate1(loop)</button>
+	<button id="btnThreadPoolIsolate2">ThreadPoolIsolate2(break)</button>
+	<button id="btnThreadPoolIsolate3">ThreadPoolIsolate3(sleep)</button>
+	<button id="btnThreadPoolIsolate4">ThreadPoolIsolate4(exception)</button><br/>
+</body>
+</html>
