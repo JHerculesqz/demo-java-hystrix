@@ -38,7 +38,7 @@
     		$("#btnThreadPoolIsolate1").click(function(){
     			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
     				name: "btnThreadPoolIsolate1",
-    				recovery: false
+    				crazyMode: 0
     			}, function(res){
     				console.log(res);
     			});
@@ -46,7 +46,7 @@
     		$("#btnThreadPoolIsolate2").click(function(){
     			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
     				name: "btnThreadPoolIsolate2",
-    				recovery: false
+    				crazyMode: 2 
     			}, function(res){
     				console.log(res);
     			});
@@ -54,7 +54,15 @@
     		$("#btnThreadPoolIsolate3").click(function(){
     			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
     				name: "btnThreadPoolIsolate3",
-    				recovery: true
+    				crazyMode: 1
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnThreadPoolIsolate4").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
+    				name: "btnThreadPoolIsolate4",
+    				crazyMode: 3
     			}, function(res){
     				console.log(res);
     			});
@@ -91,11 +99,10 @@
 	<button id="btnExecuteModeSync">ExecuteModeSync</button>
 	<button id="btnExecuteModeASync">ExecuteModeASync</button>
 	<button id="btnExecuteModeReact">ExecuteModeReact</button><br/>
-	<button id="btnThreadPoolIsolate1">ThreadPoolIsolate1</button>
-	<button id="btnThreadPoolIsolate2">ThreadPoolIsolate2</button>
-	<button id="btnThreadPoolIsolate3">ThreadPoolIsolate3</button><br/>
-	<button id="btnSemaphoreIsolate1">SemaphoreIsolate1</button>
-	<button id="btnSemaphoreIsolate2">SemaphoreIsolate2</button>
-	<button id="btnSemaphoreIsolate3">SemaphoreIsolate3</button><br/>
+	<button id="btnThreadPoolIsolate1">ThreadPoolIsolate1(loop)</button>
+	<button id="btnThreadPoolIsolate2">ThreadPoolIsolate2(break)</button>
+	<button id="btnThreadPoolIsolate3">ThreadPoolIsolate3(sleep)</button>
+	<button id="btnThreadPoolIsolate4">ThreadPoolIsolate4(exception)</button><br/>
+	SemaphoreIsolate omit...<br/>
 </body>
 </html>

@@ -12,9 +12,14 @@ public class SimpleDemoVo {
 	@Getter
 	private String name;
 
+	/**
+	 * 0:so crazy<br>
+	 * 1:crazy<br>
+	 * 2:so crazy to recovery<br>
+	 */
 	@Setter
 	@Getter
-	private boolean recovery;
+	private int crazyMode;
 
 	// #endregion
 }

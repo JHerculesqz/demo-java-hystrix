@@ -6,20 +6,30 @@ import com.huawei.server.vo.SimpleDemoVo;
 public class MainProvider {
 	// #region Fields
 
-	private static boolean recovery;
+	private static int crazyMode;
 
 	// #endregion
 
 	// #region crazyFunc
 
 	public static SimpleDemoResVo crazyFunc(SimpleDemoVo oSimpleDemoVo) {
-		recovery = oSimpleDemoVo.isRecovery();
+		crazyMode = oSimpleDemoVo.getCrazyMode();
 
-		while (true) {
-			System.out.println("I am crazy robot...");
-			if (recovery) {
-				System.out.println("I am ok now...");
-				break;
+		if (1 == crazyMode) {
+			try {
+				Thread.sleep(30 * 1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		} else if (3 == crazyMode) {
+			System.out.println(3 / 0);// ÅªËÀ×Ô¼º
+		} else {
+			while (true) {
+				System.out.println("I am crazy robot...");
+				if (2 == crazyMode) {
+					System.out.println("I am ok now...");
+					break;
+				}
 			}
 		}
 

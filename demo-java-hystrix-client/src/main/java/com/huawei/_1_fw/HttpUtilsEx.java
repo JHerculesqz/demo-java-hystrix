@@ -13,7 +13,7 @@ public class HttpUtilsEx {
 		RestTemplate oRestTemplate = new RestTemplate();
 
 		MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
-		headers.add("Content-Type", "Content-Type");
+		headers.add("Content-Type", "application/json");
 		oRestTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
 		HttpEntity<Object> oRequest = new HttpEntity<Object>(oPostParam, headers);
 		return oRestTemplate.postForObject(strUrl, oRequest, oResponseClazz);
