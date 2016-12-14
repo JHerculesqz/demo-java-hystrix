@@ -7,33 +7,65 @@
     <script type="text/javascript" src="js/component/AjaxUtils.js"></script>
     <script type="text/javascript">
     	$(document).ready(function(){
-    		$("#btnThreadPoolIsolate1").click(function(){
-    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
-    				name: "btnThreadPoolIsolate1",
+    		$("#btnTrandition1").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/trandition/doSth", {
+    				msg: "btnTrandition1",
     				crazyMode: 0
     			}, function(res){
     				console.log(res);
     			});
     		});
-    		$("#btnThreadPoolIsolate2").click(function(){
-    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
-    				name: "btnThreadPoolIsolate2",
+    		$("#btnTrandition2").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/trandition/doSth", {
+    				msg: "btnTrandition2",
     				crazyMode: 2 
     			}, function(res){
     				console.log(res);
     			});
     		});
-    		$("#btnThreadPoolIsolate3").click(function(){
-    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
-    				name: "btnThreadPoolIsolate3",
+    		$("#btnTrandition3").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/trandition/doSth", {
+    				msg: "btnTrandition3",
     				crazyMode: 1
     			}, function(res){
     				console.log(res);
     			});
     		});
-    		$("#btnThreadPoolIsolate4").click(function(){
-    			ajaxUtils.postAjax("/hystrix/client/threadPoolIsolate", {
-    				name: "btnThreadPoolIsolate4",
+    		$("#btnTrandition4").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/trandition/doSth", {
+    				msg: "btnTrandition4",
+    				crazyMode: 3
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnWow1").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/wow/doSth", {
+    				msg: "btnWow1",
+    				crazyMode: 0
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnWow2").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/wow/doSth", {
+    				msg: "btnWow2",
+    				crazyMode: 2 
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnWow3").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/wow/doSth", {
+    				msg: "btnWow3",
+    				crazyMode: 1
+    			}, function(res){
+    				console.log(res);
+    			});
+    		});
+    		$("#btnWow4").click(function(){
+    			ajaxUtils.postAjax("/hystrix/client/wow/doSth", {
+    				msg: "btnWow4",
     				crazyMode: 3
     			}, function(res){
     				console.log(res);
@@ -43,9 +75,26 @@
     </script>
 </head>
 <body>
-	<button id="btnThreadPoolIsolate1">ThreadPoolIsolate1(loop)</button>
-	<button id="btnThreadPoolIsolate2">ThreadPoolIsolate2(break)</button>
-	<button id="btnThreadPoolIsolate3">ThreadPoolIsolate3(sleep)</button>
-	<button id="btnThreadPoolIsolate4">ThreadPoolIsolate4(exception)</button><br/>
+	<h1>测试说明</h1>
+	<div>STEP1.点5次loop则熔断</div>
+	<div>STEP2.再点击break则熔断恢复</div>
+	<div>STEP3.点10次loop则熔断，且熔断再也无法恢复</div>
+	<div>STEP4.点5次sleep则熔断，过一段时间则熔断自动恢复</div>
+	<div>STEP5.点5次exception则熔断，过一段时间则熔断自动恢复</div>
+	<button id="btnTrandition1">Trandition1(loop)</button>
+	<button id="btnTrandition2">Trandition2(break)</button>
+	<button id="btnTrandition3">Trandition3(sleep)</button>
+	<button id="btnTrandition4">Trandition4(exception)</button><br/>
+	
+	<h1>测试说明</h1>
+	<div>STEP1.点5次loop则熔断</div>
+	<div>STEP2.再点击break则熔断恢复</div>
+	<div>STEP3.点10次loop则熔断，且熔断再也无法恢复</div>
+	<div>STEP4.点5次sleep则熔断，过一段时间则熔断自动恢复</div>
+	<div>STEP5.点5次exception则熔断，过一段时间则熔断自动恢复</div>
+	<button id="btnWow1">Wow1(loop)</button>
+	<button id="btnWow2">Wow2(break)</button>
+	<button id="btnWow3">Wow3(sleep)</button>
+	<button id="btnWow4">Wow4(exception)</button><br/>
 </body>
 </html>
